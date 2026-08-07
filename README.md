@@ -8,6 +8,10 @@ Quartz is a set of tools that helps you publish your [digital garden](https://jz
 
 [Join the Discord Community](https://discord.gg/cRFFHYye7t)
 
+
+git add . && git commit -m "업데이트" && git push origin v5
+
+
 ## Sponsors
 
 <p align="center">
