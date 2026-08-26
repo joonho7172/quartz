@@ -17,4 +17,9 @@ Elastic Search는 [[Multi Tenancy]] 를 지원하기에, 여러 인덱스를 한
 
 동해물과 -> 동해+물+과 처럼.
 
+### PostSearchService 의 after commit 이후
+Spring Event Listener의 phase를 RDS의 색인 commit 이후로 했기 때문에, ES의 역색인 작업의 실패가 
+
+
+
 
