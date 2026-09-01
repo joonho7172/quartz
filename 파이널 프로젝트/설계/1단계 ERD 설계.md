@@ -53,6 +53,8 @@
 	1. 왜 enum으로 두었냐
 		1. 거래 상태는 값이 완벽하게 정해져있고, 
 		2. 현재 정책상 거래 완료, 거래 가능 2개 밖에 없기 때문에 ENUM으로도 충분하다고 판단
+9. like count
+10. view count
 
 
 ## Items_Image
@@ -132,4 +134,105 @@
 2. user id (교환 요청을 하는 구매자의 id)
 	1. 왜 만들었냐
 		1. 누가 요청하는지 알아야 채팅 참여 인원의 역할을 알 수 있기 때문.
-		2. 
+
+3. item_id (교환 요청을 받은 물품의 id)
+	1. 왜 만들었냐
+		1. item_id를 알아야 item의 주인도 알고 채팅방 생성 가능.
+
+4. requested_quantity (교환 요청 받을 대상의 수량을 정함)
+
+5. created_at
+6. updated_at (교환이 수정되던, 취소되던, 완료되던, 거절되던 시간을 기록)
+7. requested_status (default = pending)
+	1. 왜 만들었냐
+		1. 상태 관리를 하기 위해서..
+
+
+## Refresh _Tokens
+1. refresh token id (pk)
+	1. 리프레시 토큰 식별자
+2. user_id (fk)
+	1. 누구의 refresh_token인지 알기 위해서 user 테이블에서 참조한 외래키
+3. token_hash
+	1. 토큰 원문이 아닌 해시값, 탈취 위험이 있어 해시로 암호화 후 저장
+4. expires_at
+	1. 토큰 만료 시간 저장
+5. created_at
+	1. 시간을 비교하기 위한 토큰 생성 시간
+6. revoked_at
+	1. 로그아웃 등 토큰이 폐기된 시간.
+
+
+## Group
+1. group_id(pk)
+	1. 그룹을 식별하기 위한 식별자
+2. group_name
+	1. 그룹의 이름
+3. group_content
+	1. 그룹의 설명을 보관
+4. region_code
+	1. 그룹의 도로명 주소(우편번호)를 저장
+5. group_longtitude
+	1. 그룹의 경도를 저장, 사용자의 위치와 비교하기 위한 값
+	2. 그룹의 위도를 저장, 사용자의 위치와 비교하기 위한 값
+6. created_at
+	1. 그룹 생성 시간. 나중에 문제가 생겼을때 로그 확인하기 위함.
+
+
+## Group_items
+1. group_id (pk, fk)
+	1. 어디 그룹인지 알기 위해 Group 테이블에서 참조한 복합키
+2. item_id (pk, fk)
+	1. 그룹에 속한 물품의 id, 하나의 물품이 여러 그룹에 있을 수 있으므로 복합키.
+3. created_at
+	1. 그룹에 물품이 등록된 시간. 나중에 물품이 등록된 시간과 정합성을 맞춰 볼 수도 있음.
+
+## Group members
+1. group_id (pk, fk)
+	1. 어디 그룹인지 알기 위해 Group 테이블에서 참조한 복합키
+2. user_id (pk, fk)
+	1. 한 사람이 최대 5개의 그룹에 가입 할 수 있기 때문에 만든 복합키.
+3. location_verified_at
+	1. 사용자가 인증을 완료 한 시간.
+	2. 훗날 며칠/몇달 마다 인증을 갱신해야 한다 라는 정책을 위한 확장성 고려
+4. left_at (default = null)
+	1. 사용자 그룹 탈퇴 시간
+	2. 훗날 문제가 생기거나 로그가 필요할 때 활용 하기 위함.
+5. user_status
+	1. 사용자 상태를 저장하기 위함
+	2. 사용자가 그룹에 참여하고 있는지, 탈퇴한 회원인지에 대한 표시가 다르기 때문에 나타내야함
+6. created_at
+	1. 사용자 가입 시간, 로그 확인 용
+
+
+## item_likes
+1. user_id(pk, fk)
+2. ltem_id(pk, fk)
+	1. 사용자가 여러 물품에 대해서 좋아요를 누를 수 있고, 취소 할 수 있기 때문에 관리
+3. created_at 
+	1. 좋아요를 누른 시간을 남겨 로그 관리하기 위함
+
+왜 isLiked (boolean)을 두지 않았나 -> 삭제 할 이력과 기록을 남길 이유도 없을 뿐 더러,
+행 삭제 시 좋아요 x , 행 추가 시 좋아요 o 형태의 post, delete로 판단하기 위함.
+
+## Items_views
+1. user_id(pk, fk)
+2. item_id(pk, fk)
+	1. likes와 마찬가지로 하나의 사람이 여러개의 물품을 조회하고 여러 사람이 여러개의 물품을 조회해도 데이터의 고유성과 무결성을 지키기 위함.
+3. last_counted_at
+	1. 마지막으로 본 시간과 현재 서버의 시간을 비교하여 24시간이 지났으면 view count를 하나 추가하고 값을 현재 시간으로 초기화 한다.
+
+
+## Search_histories
+1. search_history_id(pk)
+	1. 검색 기록 식별자로 구분하기 위함
+2. user_id(fk)
+	1. 누가 검색을 했는지 참고 하기 위해서 users 테이블에서 외래키로 가져왔다.
+3. keyword
+	1. 검색한 기록어
+4. last_searched_at
+	1. 마지막으로 검색한 시간을 기록한다.
+	2. 검색 기록의 정렬을 위해서 저장한다.
+5. created_at
+	1. 로그 확인 용 created_at
+
