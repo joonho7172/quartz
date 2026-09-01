@@ -1,0 +1,1 @@
+우선적으로 postgre SQL은 관계형 DB이다. 일반 관계형 DB인 mySQL과 noSQL인 mongoDB의 장점을 한꺼번에 섞은 DB랄까
