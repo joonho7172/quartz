@@ -13,4 +13,4 @@ JDK21 이전에도 virtual thread가 없었던 것은 아니나, 그 전에는 �
 virtual thread는 carrierThread를 가지고 있음. 실제로 작업하는 platform thread를 의미.
 virtual thread는 [[ForkJoinPool]] 이라는 스케줄러에서 담당함.
 
-![[Pasted image 20260908154251.png]]
+![[Pasted image 20260908154251.png]][[ForkJoinPool]] 에서 알 수 있듯이. 각각의 virtual thread는 각자의 queue를 가지고 있으며, 할당 받은 carrier Thread가 끝나면 남은 스레드의 tail로 가서 작업을 뺏어 온다.
