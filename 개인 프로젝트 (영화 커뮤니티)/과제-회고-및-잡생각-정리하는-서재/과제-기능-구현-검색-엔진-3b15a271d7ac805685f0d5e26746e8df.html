@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>과제 기능 구현 검색 엔진 3b15a271d7ac805685f0d5e26746e8df</title><meta charset="utf-8"/><link rel="preload" href="../../index-bb6c1746.css" as="style"/><link rel="preload" href="../../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 5"/><meta property="og:title" content="과제 기능 구현 검색 엔진 3b15a271d7ac805685f0d5e26746e8df"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="과제 기능 구현 검색 엔진 3b15a271d7ac805685f0d5e26746e8df"/><meta name="twitter:description" content="과제 기능 구현 검색 엔진 먼저 각각의 성능을 비교하기 전에 기준이 되는 검색어를 정하였다. 검색어 1. 공포 영화 (공포 + 영화의 합성어) 검색어 2. 배우 연기가 좋은 영화 (조사와 띄어쓰기가 포함되어 있는 자연어) 검색어 3."/><meta property="og:description" content="과제 기능 구현 검색 엔진 먼저 각각의 성능을 비교하기 전에 기준이 되는 검색어를 정하였다. 검색어 1. 공포 영화 (공포 + 영화의 합성어) 검색어 2. 배우 연기가 좋은 영화 (조사와 띄어쓰기가 포함되어 있는 자연어) 검색어 3."/><meta property="og:image:alt" content="과제 기능 구현 검색 엔진 먼저 각각의 성능을 비교하기 전에 기준이 되는 검색어를 정하였다. 검색어 1. 공포 영화 (공포 + 영화의 합성어) 검색어 2. 배우 연기가 좋은 영화 (조사와 띄어쓰기가 포함되어 있는 자연어) 검색어 3."/><meta property="twitter:domain" content="joonho7172.github.io/quartz"/><meta property="og:url" content="https://joonho7172.github.io/quartz/개인-페이지--and--공유된-페이지/과제-회고-및-잡생각-정리하는-서재/과제-기능-구현-검색-엔진-3b15a271d7ac805685f0d5e26746e8df"/><meta property="twitter:url" content="https://joonho7172.github.io/quartz/개인-페이지--and--공유된-페이지/과제-회고-및-잡생각-정리하는-서재/과제-기능-구현-검색-엔진-3b15a271d7ac805685f0d5e26746e8df"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="과제 기능 구현 검색 엔진 먼저 각각의 성능을 비교하기 전에 기준이 되는 검색어를 정하였다. 검색어 1. 공포 영화 (공포 + 영화의 합성어) 검색어 2. 배우 연기가 좋은 영화 (조사와 띄어쓰기가 포함되어 있는 자연어) 검색어 3."/><meta name="generator" content="Quartz"/><link href="../../index-bb6c1746.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted%20Grotesk%3Awght%40400%3B700&amp;family=Source%20Sans%20Pro%3Aital%2Cwght%400%2C400%3B0%2C600%3B1%2C400%3B1%2C600&amp;family=IBM%20Plex%20Mono%3Awght%40400%3B600&amp;display=swap"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://joonho7172.github.io/quartz/개인-페이지--and--공유된-페이지/과제-회고-및-잡생각-정리하는-서재/과제-기능-구현-검색-엔진-3b15a271d7ac805685f0d5e26746e8df-og-image.webp"/><meta property="og:image:url" content="https://joonho7172.github.io/quartz/개인-페이지--and--공유된-페이지/과제-회고-및-잡생각-정리하는-서재/과제-기능-구현-검색-엔진-3b15a271d7ac805685f0d5e26746e8df-og-image.webp"/><meta name="twitter:image" content="https://joonho7172.github.io/quartz/개인-페이지--and--공유된-페이지/과제-회고-및-잡생각-정리하는-서재/과제-기능-구현-검색-엔진-3b15a271d7ac805685f0d5e26746e8df-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="개인-페이지--and--공유된-페이지/과제-회고-및-잡생각-정리하는-서재/과제-기능-구현-검색-엔진-3b15a271d7ac805685f0d5e26746e8df" data-basepath="/quartz"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">Quartz 5</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="Search" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something..." placeholder="Search for something..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="Dark mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="Reader mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-27" aria-label="Explorer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-27" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../개인-페이지--and--공유된-페이지/">개인 페이지 &amp; 공유된 페이지</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../개인-페이지--and--공유된-페이지/과제-회고-및-잡생각-정리하는-서재/">과제 회고 및 잡생각 정리하는 서재</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>과제 기능 구현 검색 엔진 3b15a271d7ac805685f0d5e26746e8df</a></div></nav><h1 class="article-title">과제 기능 구현 검색 엔진 3b15a271d7ac805685f0d5e26746e8df</h1><p show-comma="true" class="content-meta"><time datetime="2026-08-07T04:16:52.308Z">Aug 07, 2026</time><span>37 min read</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="과제-기능-구현-검색-엔진">과제 기능 구현 검색 엔진<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#과제-기능-구현-검색-엔진" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>먼저 각각의 성능을 비교하기 전에 기준이 되는 검색어를 정하였다.</p>
+<p>검색어 1. 공포 영화 (공포 + 영화의 합성어)</p>
+<p>검색어 2. 배우 연기가 좋은 영화 (조사와 띄어쓰기가 포함되어 있는 자연어)</p>
+<p>검색어 3. 영화 (하나의 단어로 많은 데이터를 얼마나 효율적으로 검색해내는지 확인하기 위함)</p>
+<p>먼저 운영 환경이 배포 환경과 같고, AWS의 RDS 와 연결이 되어 있어서, 비용도 그렇고 버전 고정과 벌크 데이터를 넣고 초기화 하기 위해 모든 검색 성능 실험은 따로 도커 환경을 준비 했다.</p>
+<p><img src="../../과제-기능-구현-검색-엔진/image.png" alt="image.png"/></p>
+<p>배포/운영 환경과 같은 환경에서 실험 해야 하므로 버전 8.4.9를 로컬에서 준비했다.</p>
+<p>과정은 아래와 같다.</p>
+<p>workapi 소스코드
+↓ localhost:3307로 접속만 함
+Docker MySQL 8.4.9
+↓
+Docker 전용 volume</p>
+<p>벤치 마크 전용 사용자 1명을 생성하고, 검색용으로 사용할 게시글 데이터를 10만건 ~ 적재한 후, Like 구현을 해서 explain Analyze로 비교할 계획이다.</p>
+<ol>
+<li>임의의 사용자 만들기</li>
+</ol>
+<p><img src="../../과제-기능-구현-검색-엔진/image-1.png" alt="image.png"/></p>
+<ol>
+<li>리뷰 오픈 데이터 셋 가져오기</li>
+</ol>
+<p><img src="../../과제-기능-구현-검색-엔진/image-2.png" alt="image.png"/></p>
+<p><a href="https://github.com/e9t/nsmc/blob/master/ratings.txt%EC%97%90%EC%84%9C" class="external external-link">https://github.com/e9t/nsmc/blob/master/ratings.txt에서<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 20만건의 자연어 데이터 셋을 가져온다. (나중에 데이터를 복합하고 섞어 50만 건으로 늘릴 예정)</p>
+<p>그 중 부정 라벨 50000, 긍정 라벨 50000, 총 10만건의 데이터로 실험 한다.</p>
+<ol>
+<li>현재 운영하고 있는 DB가 MySQL기반이므로 PostRepository에서 검색쿼리를 추가한다.</li>
+</ol>
+<p><img src="../../과제-기능-구현-검색-엔진/image-3.png" alt="image.png"/></p>
+<p>간단하게 입력값이 제목과 내용에 포함되어 있는지만 검색을 한다 LIKE %입력값%의 성능을 보기 위함.</p>
+<p><img src="../../과제-기능-구현-검색-엔진/image-4.png" alt="image.png"/></p>
+<p>첫번째 키워드는 “공포 영화”로 like를 통해 값들이 나오는걸 볼 수 가 있다.</p>
+<p><img src="../../과제-기능-구현-검색-엔진/image-5.png" alt="image.png"/></p>
+<p>그러나 검색어가 조금만 복잡해지면 LIKE로 찾지 못하는 단점이 있다. (예시: “로버트 다우니 주니어가 나오는 액션 영화”, “연기를 잘하고 재밌는 영화”</p>
+<h2 id="검색어-1-공포-영화---mysql-like-검색어-결과">검색어 1( “공포 영화” )  MySQL LIKE %검색어% 결과.<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#검색어-1-공포-영화---mysql-like-검색어-결과" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><img src="../../과제-기능-구현-검색-엔진/image-6.png" alt="image.png"/></p>
+<p>목록조회, 페이지네이션 까지 정한 조회 결과 이다, 전체 조회까지 67.8ms가 걸린 것을 확인 할 수 있다.</p>
+<p><img src="../../과제-기능-구현-검색-엔진/image-7.png" alt="image.png"/></p>
+<p>Count 값들만 뽑아낸 조회 결과, 총 59ms가 걸렸다. 전체 조회보다는 조금 더 나은 성능.</p>
+<p>결과 :</p>
+<p>목록 쿼리</p>
+<ul>
+<li>테이블 스캔: 33.8ms</li>
+<li>LIKE 필터 완료: 67.6ms</li>
+<li>정렬 및 LIMIT 완료: 67.8ms</li>
+</ul>
+<p>COUNT 쿼리</p>
+<ul>
+<li>테이블 스캔: 19.8ms</li>
+<li>LIKE 필터 완료: 58.9ms</li>
+<li>COUNT 완료: 59.0ms</li>
+</ul>
+<p>API요청과 응답까지의 시간과, p50, p95를 알기 위해</p>
+<p><img src="../../과제-기능-구현-검색-엔진/image-8.png" alt="image.png"/></p>
+<p>JVM 클래스 로딩, JIT 최적화와 DB 커넥션 풀 준비, DB데이터가 메모리에 올라오는 과정 등. 측정 오류를 줄이기 위해서 워밍업 3회를 거쳤다.</p>
+<p>이후에 p50( 요청의 절반 ) 이 108.7ms안에 완료가 되었고, p95(95번쨰 )값이 184.5ms 안에 종료가 되었다.</p>
+<h2 id="2번-검색어-배우-연기가-좋은-영화">2번 검색어 “배우 연기가 좋은 영화”<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2번-검색어-배우-연기가-좋은-영화" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><img src="../../과제-기능-구현-검색-엔진/image-9.png" alt="image.png"/></p>
+<p>우선 검색 결과는 0이었다. 검색 결과가 없는 상황에서도 성능 비교가 필요하다고 판단해 같은 방법으로 진행 했다.</p>
+<p>우선 페이지네이션 등 제약 사항이 있는 필터링 결과는 74.4ms,</p>
+<p><img src="../../과제-기능-구현-검색-엔진/image-10.png" alt="image.png"/></p>
+<p>그냥 Count만 한 쿼리에는 60.1ms가 나왔다.</p>
+<p>똑같이 워밍업 3회, 측정 100회로 p50과 p95의 값을 정했다.</p>
+<h2 id="3번-검색어-영화">3번 검색어 “영화”<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3번-검색어-영화" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>과연 많이 검색되는 일반 단어 하나에도 성능차이가 있을까 궁금해서 정하게 되었다.</p>
+<p>스크린샷이나 결과는 생략하고 아래 표에 집어넣겠다.</p>
+<p>10만 데이터에서의 mySQL “공포 영화”에 대한 LIKE %검색어% 에 대한 결과. (인덱스 미적용)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>데이터</th><th>검색어</th><th>결과</th><th>목록 SQL</th><th>COUNT SQL</th><th>API 평균</th><th>API p50</th><th>API p95</th></tr></thead><tbody><tr><td>100,000</td><td>영화</td><td>28,158</td><td>65.7ms</td><td>57.8ms</td><td>99.35ms</td><td>96.36ms</td><td>114.35ms</td></tr><tr><td>100,000</td><td>공포 영화</td><td>33</td><td>67.8ms</td><td>59.0ms</td><td>82.65ms</td><td>81.19ms</td><td>93.81ms</td></tr><tr><td>100,000</td><td>배우 연기가 좋은 영화</td><td>0</td><td>74.4ms</td><td>60.1ms</td><td>57.73ms</td><td>52.00ms</td><td>73.40ms</td></tr></tbody></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>데이터</th><th>검색어</th><th>결과</th><th>목록 SQL</th><th>COUNT SQL</th><th>API 평균</th><th>API p50</th><th>API p95</th></tr></thead><tbody><tr><td>199,992</td><td>영화</td><td>62,684</td><td>84.6ms</td><td>99.6ms</td><td>186.48ms</td><td>183.73ms</td><td>194.12ms</td></tr><tr><td>199,992</td><td>공포 영화</td><td>87</td><td>85.5ms</td><td>73.7ms</td><td>157.09ms</td><td>156.36ms</td><td>162.05ms</td></tr><tr><td>199,992</td><td>배우 연기가 좋은 영화</td><td>0</td><td>85.3ms</td><td>104.0ms</td><td>84.69ms</td><td>84.32ms</td><td>88.44ms</td></tr></tbody></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>데이터</th><th>검색어</th><th>결과</th><th>목록 SQL</th><th>COUNT SQL</th><th>API 평균</th><th>API p50</th><th>API p95</th></tr></thead><tbody><tr><td>500,000</td><td>영화</td><td>153,528</td><td>207ms</td><td>199ms</td><td><strong>431.80ms</strong></td><td><strong>427.39ms</strong></td><td><strong>451.92ms</strong></td></tr><tr><td>500,000</td><td>공포 영화</td><td>207</td><td>209ms</td><td>209ms</td><td><strong>359.65ms</strong></td><td><strong>359.36ms</strong></td><td><strong>362.96ms</strong></td></tr><tr><td>500,000</td><td>배우 연기가 좋은 영화</td><td>0</td><td>209ms</td><td>176ms</td><td><strong>195.92ms</strong></td><td><strong>195.01ms</strong></td><td><strong>200.62ms</strong></td></tr></tbody></table></div>
+<h1 id="기존-like에-인덱싱-적용">기존 LIKE에 인덱싱 적용<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#기존-like에-인덱싱-적용" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><img src="../../과제-기능-구현-검색-엔진/image-11.png" alt="image.png"/></p>
+<p>제목과 내용은 5000자 제한이기 때문에 1000자에만 인덱싱을 적용해본다. (사진에는 191이지만 실제를 1000자로 진행함)</p>
+<p>50만 건의 진행에서는,</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>검색 방식</th><th>실행 경로</th><th>검사한 행</th><th>실행 시간</th></tr></thead><tbody><tr><td><code>LIKE 'NSMC review #1%'</code></td><td><strong>Covering index range scan</strong></td><td>56,809</td><td><strong>32.4ms</strong></td></tr><tr><td><code>LIKE '%NSMC review #1%'</code></td><td><strong>Covering index full scan</strong></td><td>500,000</td><td><strong>169ms</strong></td></tr></tbody></table></div>
+<p>B-tree 기반 접두어 검색 성능으로 index를 적용하여 “영화” 키워드를 검색 한 결과, 범위 검색으로 성능이 향상 되긴 했지만, 중간 문자열 검색에서는 여전히 50만개의 행을 다 검사하며 실행시간도 유의미하게 변하지 않았다.</p>
+<h1 id="mysql의-n-gram-parser-적용">MySQL의 n-gram parser 적용.<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mysql의-n-gram-parser-적용" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><a href="https://gngsn.tistory.com/163" class="external external-link">https://gngsn.tistory.com/163<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p><img src="../../과제-기능-구현-검색-엔진/image-12.png" alt="image.png"/></p>
+<p>n gram 파서의 토큰은 기본적으로 설정된 토큰 사이즈 2를 사용했다.</p>
+<p>ngram 파서란? 토큰을 기반으로 검색을 나눠 하는 방법, 예를 들면 공포 영화를 검색하면, 공포, 포영, 영화, 등으로 검색해주는 MySQL의 built in 된 파서이다.</p>
+<h2 id="검색어-1-공포-영화---mysql-n-gram-parser-결과">검색어 1( “공포 영화” )  MySQL n-gram parser 결과.<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#검색어-1-공포-영화---mysql-n-gram-parser-결과" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><img src="../../과제-기능-구현-검색-엔진/image-13.png" alt="image.png"/></p>
+<h2 id="검색어-2-배우-연기가-좋은-영화---mysql-n-gram-parser-결과">검색어 2( “배우 연기가 좋은 영화” )  MySQL n-gram parser 결과.<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#검색어-2-배우-연기가-좋은-영화---mysql-n-gram-parser-결과" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><img src="../../과제-기능-구현-검색-엔진/image-14.png" alt="image.png"/></p>
+<h2 id="검색어-3-영화---mysql-n-gram-parser-결과">검색어 3( “영화” )  MySQL n-gram parser 결과.<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#검색어-3-영화---mysql-n-gram-parser-결과" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><img src="../../과제-기능-구현-검색-엔진/image-15.png" alt="image.png"/></p>
+<p>토큰의 기본 or 정책을 커뮤니티 게시판의 성격과 맞추어 and로 바꿔 계산했다.</p>
+<p>즉, 공포 or 포영 or 영화 가 아닌, 공포 and 영화로 구분하겠다는 뜻.</p>
+<p>그 외 api 요청 결과의 시간도 코드에 추가해 측정한 결과</p>
+<p><img src="../../과제-기능-구현-검색-엔진/image-16.png" alt="image.png"/></p>
+<p>EX) 키워드 2의 API 요청 시간</p>
+<p><img src="../../과제-기능-구현-검색-엔진/image-17.png" alt="image.png"/></p>
+<h1 id="mysql-n-gram-parser-적용-결과-표">MySQL N-gram parser 적용 결과 표<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mysql-n-gram-parser-적용-결과-표" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>데이터</th><th>검색어</th><th>결과 수</th><th>목록 SQL</th><th>COUNT SQL</th><th>API 평균</th><th>API p50</th><th>API p95</th></tr></thead><tbody><tr><td>10만</td><td>영화</td><td>28,158</td><td>57.6ms</td><td>47ms</td><td>79.84ms</td><td>77.61ms</td><td>95.01ms</td></tr><tr><td>10만</td><td>공포 영화</td><td>554</td><td>9.80ms</td><td>34ms</td><td>45.57ms</td><td>44.53ms</td><td>53.62ms</td></tr><tr><td>10만</td><td>배우 연기가 좋은 영화</td><td>5</td><td>1.05ms</td><td>32ms</td><td>23.60ms</td><td>21.01ms</td><td>34.63ms</td></tr><tr><td>20만</td><td>영화</td><td>62,686</td><td>142ms</td><td>81ms</td><td>149.95ms</td><td>148.11ms</td><td>157.01ms</td></tr><tr><td>20만</td><td>공포 영화</td><td>1,302</td><td>14ms</td><td>66ms</td><td>58.99ms</td><td>55.99ms</td><td>69.66ms</td></tr><tr><td>20만</td><td>배우 연기가 좋은 영화</td><td>13</td><td>0.236ms</td><td>74ms</td><td>63.89ms</td><td>62.52ms</td><td>71.76ms</td></tr><tr><td>50만</td><td>영화</td><td>153,528</td><td>223ms</td><td>130ms</td><td>380.49ms</td><td>371.83ms</td><td>421.99ms</td></tr><tr><td>50만</td><td>공포 영화</td><td>3,158</td><td>21.5ms</td><td>93ms</td><td>125.91ms</td><td>121.82ms</td><td>147.72ms</td></tr><tr><td>50만</td><td>배우 연기가 좋은 영화</td><td>31</td><td>0.257ms</td><td>188ms</td><td>141.92ms</td><td>131.67ms</td><td>170.07ms</td></tr></tbody></table></div>
+<p>n- gram parser의 fullTextIndex의 적용 결과는 위와 같은 표가 나왔다.</p>
+<h1 id="또-다른-대안-mongodb-nosql">또 다른 대안. MongoDB (NoSQL)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#또-다른-대안-mongodb-nosql" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><a href="https://liltdevs.tistory.com/213" class="external external-link">https://liltdevs.tistory.com/213<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p><code>MongoDB</code>는 데이터를 데이터를 <code>JSON-like documents</code>로 저장하는 NoSQL 데이터베이스이다.</p>
+<p>MongoDB 같은 NoSQL은 JSON(BSON) 형태의 유연한 문서 구조를 사용하며, 데이터마다 필드가 달라도 한 문서 안에 계층적으로 담아 한 번에 검색할 수 있다는 이점이 있다. 즉, 비정형된 문서 데이터 검색에 강하다는 결론 하나로 실험을 해볼 가치는 충분 했다.</p>
+<p>기존의 MySQL에 있던 데이터를 MongoDB로 복사 한 뒤, 검색 성능을 확인하기 위한 함수를 생성하고,</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="java" data-theme="github-light github-dark"><code data-language="java" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">workapi_benchmark</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> function </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">measure</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(collectionName, keyword) {</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">   var</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> collection </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> db.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">getCollection</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(collectionName);</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> </span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">   var</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> filter </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> {</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">     $or</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> [</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">       { title</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> { $regex</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> keyword } },</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">       { content</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> { $regex</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> keyword } }</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">     ]</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">   };</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> </span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment">   // 워밍업</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">   collection.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">countDocuments</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(filter);</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> </span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">   collection</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">     .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">find</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(filter)</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">     .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sort</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">({ createTime</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> -</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">, _id</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> -</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> })</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">     .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">limit</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">10</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">)</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">     .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">toArray</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">();</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> </span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment">   // COUNT 측정</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">   var</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> startedAt </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> Date.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">now</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">();</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">   var</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> resultCount </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> collection.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">countDocuments</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(filter);</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">   var</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> countElapsedMs </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> Date.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">now</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">() </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> startedAt;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> </span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment">   // 목록 측정</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">   var</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> plan </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> collection</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">     .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">find</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(filter)</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">     .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sort</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">({ createTime</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> -</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">, _id</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> -</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> })</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">     .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">limit</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">10</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">)</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">     .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">explain</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;executionStats&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">);</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> </span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">   printjson</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">({</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="function">     collection</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="function"> collectionName,</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="function">     keyword</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="function"> keyword,</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="function">     resultCount</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="function"> resultCount,</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="function">     countElapsedMs</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="function"> countElapsedMs,</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="function">     listExecutionTimeMs</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="function"> plan.executionStats.executionTimeMillis,</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="function">     totalDocsExamined</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="function"> plan.executionStats.totalDocsExamined,</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="function">     totalKeysExamined</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="function"> plan.executionStats.totalKeysExamined</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="function">   });</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> }</span></span></code></pre></figure>
+<p>MySQL의 LIKE %%와 같이 MongoDB의 $regex를 사용해서 측정을 했다. 첫 실행에서만 발생하는 준비 비용을 제외하기 위한, 각자의 워밍업 후에 키워들의 값들을 측정했다.</p>
+<h2 id="키워드-들의-mongodb의-검색-성능-측정">키워드 들의 MongoDB의 검색 성능 측정<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#키워드-들의-mongodb의-검색-성능-측정" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="java" data-theme="github-light github-dark"><code data-language="java" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">{</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  collection</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> 'posts_200k'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  keyword</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> '영화'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  resultCount</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 62686</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  countElapsedMs</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 141</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  listExecutionTimeMs</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 183</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  totalDocsExamined</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 200000</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  totalKeysExamined</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 0</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">{</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  collection</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> 'posts_200k'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  keyword</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> '공포 영화'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  resultCount</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 87</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  countElapsedMs</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 136</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  listExecutionTimeMs</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 164</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  totalDocsExamined</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 200000</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  totalKeysExamined</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 0</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">{</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  collection</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> 'posts_200k'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  keyword</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> '배우 연기가 좋은 영화'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  resultCount</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  countElapsedMs</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 151</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  listExecutionTimeMs</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 182</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  totalDocsExamined</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 200000</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  totalKeysExamined</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 0</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">.</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">.</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">.</span></span>
+<span data-line> </span></code></pre></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>데이터</th><th>검색어</th><th>결과(MySQL/Mongo)</th><th>MySQL 목록</th><th>Mongo 목록</th><th>목록 차이</th><th>MySQL COUNT</th><th>Mongo COUNT</th><th>COUNT 차이</th></tr></thead><tbody><tr><td>10만</td><td>영화</td><td>28,158 / 28,158</td><td>65.7ms</td><td>99ms</td><td>Mongo 1.51배 느림</td><td>57.8ms</td><td>68ms</td><td>Mongo 1.18배 느림</td></tr><tr><td>10만</td><td>공포 영화</td><td>33 / 33</td><td>67.8ms</td><td>78ms</td><td>Mongo 1.15배 느림</td><td>59.0ms</td><td>64ms</td><td>Mongo 1.08배 느림</td></tr><tr><td>10만</td><td>배우 연기가 좋은 영화</td><td>0 / 0</td><td>74.4ms</td><td>84ms</td><td>Mongo 1.13배 느림</td><td>60.1ms</td><td>69ms</td><td>Mongo 1.15배 느림</td></tr><tr><td>20만</td><td>영화</td><td>62,684 / 62,686</td><td>84.6ms</td><td>183ms</td><td>Mongo 2.16배 느림</td><td>99.6ms</td><td>141ms</td><td>Mongo 1.42배 느림</td></tr><tr><td>20만</td><td>공포 영화</td><td>87 / 87</td><td>85.5ms</td><td>164ms</td><td>Mongo 1.92배 느림</td><td>73.7ms</td><td>136ms</td><td>Mongo 1.85배 느림</td></tr><tr><td>20만</td><td>배우 연기가 좋은 영화</td><td>0 / 0</td><td>85.3ms</td><td>182ms</td><td>Mongo 2.13배 느림</td><td>104ms</td><td>151ms</td><td>Mongo 1.45배 느림</td></tr><tr><td>50만</td><td>영화</td><td>153,528 / 153,528</td><td>207ms</td><td>444ms</td><td>Mongo 2.14배 느림</td><td>199ms</td><td>348ms</td><td>Mongo 1.75배 느림</td></tr><tr><td>50만</td><td>공포 영화</td><td>207 / 207</td><td>209ms</td><td>407ms</td><td>Mongo 1.95배 느림</td><td>209ms</td><td>340ms</td><td>Mongo 1.63배 느림</td></tr><tr><td>50만</td><td>배우 연기가 좋은 영화</td><td>0 / 0</td><td>209ms</td><td>441ms</td><td>Mongo 2.11배 느림</td><td>176ms</td><td>378ms</td><td>Mongo 2.15배 느림</td></tr></tbody></table></div>
+<p>이로부터 얻은 결론은 MySQL과 MongoDB 모두 전체 데이터를 검사를 했고, 로컬 환경에서는 MongoDB가 평균적으로 1.6~ 1.7배 정도 느렸다.</p>
+<h1 id="그럼-mongdo-db도-index를-적용하면">그럼 Mongdo DB도 Index를 적용하면?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#그럼-mongdo-db도-index를-적용하면" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><a href="http://mongodb.com/docs/manual/reference/operator/query/regex/" class="external external-link">http://mongodb.com/docs/manual/reference/operator/query/regex/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>MongoDB도 ^검색어 형태의 prefix 정규식일 때 일반 인덱스를 효과적으로 사용할 수 있다고 공식 문서에 나와 있기에 인덱스도 적용해서 MySQL과 비교해봤다.</p>
+<p><img src="../../과제-기능-구현-검색-엔진/image-18.png" alt="image.png"/></p>
+<p>모든 title과 content에 인덱스를 적용시켜준 후, 같은 방법으로 각자의 키워드에 대해서 측정을 했다. 그 결과와 MySQL의 index 적용과는 아래와 같았다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>데이터</th><th>검색어</th><th>결과(MySQL/Mongo)</th><th>MySQL 인덱스 목록</th><th>Mongo 인덱스 목록</th><th>목록 차이</th><th>MySQL 인덱스 COUNT</th><th>Mongo 인덱스 COUNT</th><th>COUNT 차이</th></tr></thead><tbody><tr><td>50만</td><td>영화</td><td>153,528 / 153,528</td><td>324ms</td><td>815ms</td><td>Mongo 2.52배 느림</td><td>202ms</td><td>381ms</td><td>Mongo 1.89배 느림</td></tr><tr><td>50만</td><td>공포 영화</td><td>207 / 207</td><td>209ms</td><td>630ms</td><td>Mongo 3.01배 느림</td><td>209ms</td><td>349ms</td><td>Mongo 1.67배 느림</td></tr><tr><td>50만</td><td>배우 연기가 좋은 영화</td><td>0 / 0</td><td>209ms</td><td>657ms</td><td>Mongo 3.14배 느림</td><td>176ms</td><td>378ms</td><td>Mongo 2.15배 느림</td></tr></tbody></table></div>
+<p>표와 같이 MongoDB의 인덱스 적용이 훨씬 느렸다. 앞에 와일드 카드가 있는 부분 문자열 검색에서 MySQL은 효과가 없는 인덱스를 사용하지 않고 Table-scan을 했다면, MongoDB는 두 인덱스를 전체 스캔하면서 오히려 인덱스 적용 전보다 성능이 더 약화됐다는 결론을 얻었다.</p>
+<h1 id="마지막-대안--elastic-search">마지막 대안 : Elastic search<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#마지막-대안--elastic-search" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><a href="https://trends.builtwith.com/operations/Elasticsearch" class="external external-link">https://trends.builtwith.com/operations/Elasticsearch<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>결국 또 다른 대안이 없을까 찾아보던 중, BuiltWith 기준으로 현재 가장 많이 사용되고 있는 검색엔진은,</p>
+<p>Elastic Search 와, OpenSearch , MeiliSearch 가 있었다.</p>
+<p>MeiliSearch는 간단하고 구현이 쉬워 스타트업에서 많이 사용하는 검색 엔진이다. 다만, 한국어 형태소 분석 기능이 없어 한국어의 자연어 기반의 검색에는 약하다는 단점이 있다.</p>
+<p>Elastic Search는 Nori라는 한국어 형태소 분석기를 공식적으로 지원한다.</p>
+<p>커뮤니티에서 검색 기능은 사실 속도 보다 품질이 더 중요도가 높다고 생각하기에, 이 점은 상당히 매력적이었다.</p>
+<p>예를 들면, “마동석이 출연한 액션 영화”라는 문장이 있으면 단순 공백 기준, “마동석이” “출연한” “액션” “영화”가 되겠지만, Nori를 사용하면, “마동석” “출연” “액션” “영화” 와 같이 의미 있는 단어를 추출해 검색해 준다.</p>
+<p>OpenSearch는 AWS가 포크해서 만든 검색 엔진으로 AWS가 자동으로 관리해주는 Elastic Search서비스라고 볼 수 있다. 그러나 이번에는 학습을 위해서 OpenSearch 대신 Elastic Search를 사용했다.</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="java" data-theme="github-light github-dark"><code data-language="java" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">implementation </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">'org.springframework.boot:spring-boot-starter-data-elasticsearch'</span></span></code></pre></figure>
+<p>먼저 Build.gradle 의존성 파일에 elasticSearch를 도입을 위한 의존성을 추가한다.</p>
+<p>elastic search 의 성능을 확인하기 위한 별도의 폴더를 생성하고 elastic search의 nori 형태소 분석기를 설치한다.</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="java" data-theme="github-light github-dark"><code data-language="java" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">kim@</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">KimJoonHos-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">MacBook</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="keyword">Pro elasticsearch</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">search</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">lab </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">%</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> curl </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="keyword">X POST \</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">  &quot;http://localhost:9200/posts-search/_analyze?pretty&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> \</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">  -</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">H </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;Content-Type: application/json&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> \</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">  -</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">d </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">'{</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">    &quot;analyzer&quot;: &quot;posts_nori&quot;,</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">    &quot;text&quot;: &quot;배우 연기가 좋은 영화&quot;</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">  }'</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">{</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">  &quot;tokens&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> [</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">    {</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;token&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;배우&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;start_offset&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;end_offset&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 2</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;type&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;word&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;position&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 0</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">    },</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">    {</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;token&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;연기&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;start_offset&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 3</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;end_offset&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 5</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;type&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;word&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;position&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 1</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">    },</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">    {</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;token&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;좋&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;start_offset&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 7</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;end_offset&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 8</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;type&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;word&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;position&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 3</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">    },</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">    {</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;token&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;영화&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;start_offset&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 10</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;end_offset&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 12</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;type&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;word&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">      &quot;position&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> :</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">    }</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">  ]</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span></code></pre></figure>
+<p>위와 같이 형태소 분석이 되는 것을 확인 한 후. 각각의 키워드에 대해서 실험한다.</p>
+<h2 id="elastic-search-키워드-검색-결과-50만건">Elastic Search 키워드 검색 결과 (50만건)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#elastic-search-키워드-검색-결과-50만건" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><img src="../../과제-기능-구현-검색-엔진/image-19.png" alt="image.png"/></p>
+<p>각각의 결과 수가 변동이 된 것을 볼 수 있다. https는 elastic search 로 거쳐 가는 시간이므로 api응답은 별도로 측정 했다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>데이터</th><th>검색어</th><th>결과 수</th><th>ES 평균</th><th>ES p50</th><th>ES p95</th><th>HTTP 평균</th><th>HTTP p50</th><th>HTTP p95</th></tr></thead><tbody><tr><td>100,000</td><td>영화</td><td>28,058</td><td>1.72ms</td><td>0ms</td><td>2ms</td><td>4.36ms</td><td>2.73ms</td><td>5.53ms</td></tr><tr><td>100,000</td><td>공포 영화</td><td>546</td><td>0.35ms</td><td>0ms</td><td>2ms</td><td>3.14ms</td><td>2.66ms</td><td>5.72ms</td></tr><tr><td>100,000</td><td>배우 연기가 좋은 영화</td><td>63</td><td>0.34ms</td><td>0ms</td><td>2ms</td><td>3.00ms</td><td>2.51ms</td><td>5.38ms</td></tr><tr><td>200,000</td><td>영화</td><td>62,490</td><td>1.12ms</td><td>1ms</td><td>2ms</td><td>3.59ms</td><td>3.32ms</td><td>5.24ms</td></tr><tr><td>200,000</td><td>공포 영화</td><td>1,272</td><td>0.39ms</td><td>0ms</td><td>1ms</td><td>3.03ms</td><td>2.80ms</td><td>4.32ms</td></tr><tr><td>200,000</td><td>배우 연기가 좋은 영화</td><td>277</td><td>0.69ms</td><td>0ms</td><td>1ms</td><td>3.44ms</td><td>2.96ms</td><td>4.99ms</td></tr><tr><td>500,000</td><td>영화</td><td>153,036</td><td>2.38ms</td><td>2ms</td><td>4ms</td><td>5.28ms</td><td>5.03ms</td><td>7.16ms</td></tr><tr><td>500,000</td><td>공포 영화</td><td>3,090</td><td>1.19ms</td><td>1ms</td><td>2ms</td><td>3.96ms</td><td>3.72ms</td><td>5.37ms</td></tr><tr><td>500,000</td><td>배우 연기가 좋은 영화</td><td>617</td><td>1.42ms</td><td>1ms</td><td>3ms</td><td>4.29ms</td><td>4.02ms</td><td>5.94ms</td></tr></tbody></table></div>
+<p>위의 표를 보면, 10만건의 “영화” 검색 조회가 50만 건의 “영화” 검색 조회와 차이가 크지 않음을 알 수 있다. Elastic Search에는 전체 건 수를 조회 하는 것이 아닌, 역색인을 사용하기 때문에 검색 시간이 데이터의 건 수에 비교해서 올라가지 않음을 알 수 있다.</p>
+<h1 id="결론-왜-elastic-search-여야-하는지">결론 (왜 Elastic Search 여야 하는지)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#결론-왜-elastic-search-여야-하는지" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="mysqlrdbms-like-vs-mongodbnosql-regex">MySQL(RDBMS) LIKE vs MongoDB(NoSQL) regex<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mysqlrdbms-like-vs-mongodbnosql-regex" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>데이터</th><th>검색어</th><th>결과 수 MySQL / Mongo</th><th>MySQL 목록</th><th>MySQL COUNT</th><th>Mongo 목록</th><th>Mongo COUNT</th></tr></thead><tbody><tr><td>10만</td><td>영화</td><td>28,158 / 28,158</td><td>65.7ms</td><td>57.8ms</td><td>99ms</td><td>68ms</td></tr><tr><td>10만</td><td>공포 영화</td><td>33 / 33</td><td>67.8ms</td><td>59.0ms</td><td>78ms</td><td>64ms</td></tr><tr><td>10만</td><td>배우 연기가 좋은 영화</td><td>0 / 0</td><td>74.4ms</td><td>60.1ms</td><td>84ms</td><td>69ms</td></tr><tr><td>20만</td><td>영화</td><td>62,684 / 62,686</td><td>84.6ms</td><td>99.6ms</td><td>183ms</td><td>141ms</td></tr><tr><td>20만</td><td>공포 영화</td><td>87 / 87</td><td>85.5ms</td><td>73.7ms</td><td>164ms</td><td>136ms</td></tr><tr><td>20만</td><td>배우 연기가 좋은 영화</td><td>0 / 0</td><td>85.3ms</td><td>104ms</td><td>182ms</td><td>151ms</td></tr><tr><td>50만</td><td>영화</td><td>153,528 / 153,528</td><td>207ms</td><td>199ms</td><td>444ms</td><td>348ms</td></tr><tr><td>50만</td><td>공포 영화</td><td>207 / 207</td><td>209ms</td><td>209ms</td><td>407ms</td><td>340ms</td></tr><tr><td>50만</td><td>배우 연기가 좋은 영화</td><td>0 / 0</td><td>209ms</td><td>176ms</td><td>441ms</td><td>378ms</td></tr></tbody></table></div>
+<p>두 방식 모두 앞에 와일드 카드가 있으므로 전체 데이터를 검사했다.</p>
+<ul>
+<li>MySQL 같은 경우는 LIKE %검색어%로 Table Scan을 하고</li>
+<li>MongoDB 같은 경우는 $regex: 검색어로 COLL Scan을 했다.</li>
+<li>문서가 JSON 형태라는 이유만으로 NoSQL이 MySQL보다 빠르진 않았다.</li>
+</ul>
+<h2 id="b-tree-인덱스-실험">B-tree 인덱스 실험<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#b-tree-인덱스-실험" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>DB</th><th>검색어</th><th>목록 인덱스 전</th><th>목록 인덱스 후</th><th>변화</th><th>COUNT 전</th><th>COUNT 후</th><th>결과</th></tr></thead><tbody><tr><td>MySQL</td><td>영화</td><td>207ms</td><td>324ms</td><td>1.57배 느림</td><td>199ms</td><td>202ms</td><td>개선 없음</td></tr><tr><td>MongoDB</td><td>영화</td><td>444ms</td><td>815ms</td><td>1.84배 느림</td><td>348ms</td><td>381ms</td><td>더 느려짐</td></tr><tr><td>MongoDB</td><td>공포 영화</td><td>407ms</td><td>630ms</td><td>1.55배 느림</td><td>340ms</td><td>349ms</td><td>더 느려짐</td></tr><tr><td>MongoDB</td><td>배우 연기가 좋은 영화</td><td>441ms</td><td>657ms</td><td>1.49배 느림</td><td>378ms</td><td>378ms</td><td>목록만 느려짐</td></tr></tbody></table></div>
+<p>인덱스가 문제 였는지 MySQL과 MongoDB에도 각자 인덱스를 적용해서 실험해 봤다.</p>
+<p>MySQL은 여전히 Table Scan을 하고, MongoDB도 역시 모든 인덱스에서 key검사를 하여,</p>
+<p>%검색어%에는 도움이 되지 않았고 오히려 조회가 느려졌다.</p>
+<p>검색 패턴에 따른 차이도 함께 보았다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>검색 조건</th><th>결과 수</th><th>COUNT 시간</th><th>실행 방식</th></tr></thead><tbody><tr><td><code>title LIKE 'NSMC review #1%'</code></td><td>56,809</td><td>32.4ms</td><td><code>Index Range Scan</code></td></tr><tr><td><code>title LIKE '%NSMC review #1%'</code></td><td>56,809</td><td>155ms</td><td><code>Full Index Scan</code></td></tr></tbody></table></div>
+<p>예상과 같이 B-tree 인덱스는 검색어% 와 같은 index Range Scan은 약 5배 빨랐지만,</p>
+<p>%검색어% 같은 경우에는 전체 테이블과 인덱스를 탐색 해야 하므로, 인덱스 적용 효과가 없었다.</p>
+<h2 id="mysql-n-gram-vs-elasticsearch-nori">MySQL n-gram vs ElasticSearch Nori<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mysql-n-gram-vs-elasticsearch-nori" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>| 데이터 | 검색어 | 결과 수 ngram / ES | MySQL 목록 | MySQL COUNT | ES took | ES HTTP
+평균/p50/p95 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 10만 | 영화 | 28,158 / 28,058 | 57.6ms | 47ms | 1.72 / 0 / 2ms | 4.36 / 2.73 / 5.53ms |
+| 10만 | 공포 영화 | 554 / 546 | 9.79ms | 34ms | 0.35 / 0 / 2ms | 3.14 / 2.66 / 5.72ms |
+| 10만 | 배우 연기가 좋은 영화 | 5 / 63 | 1.04ms | 32ms | 0.34 / 0 / 2ms | 3.00 / 2.51 / 5.38ms |
+| 20만 | 영화 | 62,686 / 62,490 | 142ms | 81ms | 1.12 / 1 / 2ms | 3.59 / 3.32 / 5.24ms |
+| 20만 | 공포 영화 | 1,302 / 1,272 | 14ms | 66ms | 0.39 / 0 / 1ms | 3.03 / 2.80 / 4.32ms |
+| 20만 | 배우 연기가 좋은 영화 | 13 / 277 | 0.236ms | 74ms | 0.69 / 0 / 1ms | 3.44 / 2.96 / 4.99ms |
+| 50만 | 영화 | 153,528 / 153,036 | 223ms | 130ms | 2.38 / 2 / 4ms | 5.28 / 5.03 / 7.16ms |
+| 50만 | 공포 영화 | 3,158 / 3,090 | 21.5ms | 93ms | 1.19 / 1 / 2ms | 3.96 / 3.72 / 5.37ms |
+| 50만 | 배우 연기가 좋은 영화 | 31 / 617 | 0.257ms | 188ms | 1.42 / 1 / 3ms | 4.29 / 4.02 / 5.94ms |</p>
+<p>위에서 보이는 표와 같이 MySQL n-gram은 LIKE보다 검색 범위와 품질을 개선하지만, 흔한 단어는 후보가 많고, 전문 검색 인덱스에서 일치하는 게시글 ID를 찾은 다음에 정렬을 수행했기 때문에 정렬과 COUNT 비용이 컸고,</p>
+<p>그러나 Elastic Search 같은 경우는 전문 검색을 목적으로 만들어진 Lucene 기반의 엔진으로, 역색인, 형태소 분석(어간과 어미), 관련도 점수 정렬을 함께 제공 했기 때문에 가장 좋은 성능을 보였다.</p>
+<p>정확도 부분에서 그 차이도 컸다. 검색어2 (”배우 연기가 좋은 영화”) 같은 경우에도 50만 건 데이터 기준,</p>
+<p>MySQL의 n-gram parser는 31건, Elastic Search 는 617건으로 검색 정확도 차이가 컸다.</p>
+<blockquote>
+<p>그러면 Elastic Search의 검색 결과에 더미 데이터가 있는 것이 아닌가?</p>
+</blockquote>
+<ul>
+<li>
+<p>키워드 “배우 연기가 좋은 영화” 에 대한 elastic search 검색 품질</p>
+<p>짧은 영화지만 몰입도 잘 되고 배우들의 연기도 좋다
+배우들 연기는 좋았는데 시나리오가 영화를 망치지 않았나 싶다
+다른 영화들도 좋았지만 특히 피크닉! 아역배우 김수안의 연기는 최고!
+배우 연기는 좋은데 내용은 완전 억지 ㅜ배우들이 아까운 영화
+잔잔하니 마지막에 뭉클했음. 두 배우의 연기 호흡이 좋았던 영화.
+좋은 영화. 그밖에 표현할말이…배우들의 뛰어난 연기?
+배우들 연기 죽이고~ 음악좋고!! 여운이 많이 남는 영화!!
+생각했던 영화는 아니였지만 영화적으론 좋네요~~배우의연기도 일품이네요!
+이런 영화는 결말이 뻔해서 그다지 좋아하지않는데 아역배우땜시 가슴아팠다가… 또 훈훈해졌다가… 모든 배우들의 연기력도 좋았지만 아역배우의 연기력에 감탄이 나온다… 스토리도 넘 좋다~
+배우들 연기도 연기지만 내용이 참 좋았다. 이런 영화가 여운이 남는 작품이다.
+배우들 연기가 정말 일품이었다 특히 배우 조보아의 연기는 정말 소름이 돋았다. 영화의 아쉬운 내용을 배우들의 연기로 커버치는좋은 예가 되는 것 같다
+순수한 영화 두 배우의 연기도 좋고 스토리도 좋았고다만 너무 늦게 알게 되었다능
+이런 영화 좋다…잔잔함 속에 공감가는 내용의 작품.. 배우들 연기도 좋았다.
+무료영화로 봐서 별 기대 안했는데 너무 좋아요. 영화. 주인공배우님 연기가 정말 좋았어요. 말 그대로 좋은 영화.
+배우들 연기도 잘하고 영화가 주는 감동이 굉장히 크네요. 좋은 영화였어요 ㅎㅎ
+배우들의 가식적인 연기 싫다. 원래 이런스타일의 영화 좋아하는데 이영화는 별로다 매우
+연기력 좋은 주연배우들의 위력을 실감하게 하는 영화
+프랑스 영화답고국ㅁ민배우들의 연기도 좋았습니다.갱스부르는 정말 빠리 그 자체네요
+웹툰을 안 봐서 모르겠지만 영화 스토리도 탄탄하고 배우들의 연기도 좋았다.
+영화를 보고 눈물이 났어요ㅠ 배우님들의 연기가 좋았습니다.
+배우들의 연기도 스토리도 너무 좋았어요ㅠㅠ 감동적인 영화였습니다.</p>
+<p>여배우들 연기 잘 하는 사람 많이 봤지만.. 서영희 정말 갑이다
+왜 이렇게 좋은 영화가 6점대 인지 이해할수가없다. 좋은 영상미 배우들의 시선처리, 연기력 뭐하나 따질것이없는 연출인데..
+아,,,,내가 장진감독 영화를 보고 눈물을 주룩 흘릴 줄이야…배우들의 연기,특히 김성균 연기가 대단했음!! 연기 잘하는 걸로 알려진 조진웅씨의 절제된 연기도 좋았음!! 단지, 좀 꼬부라진 혓소리 였어야 하지 않았나 싶음.
+정말 몇번을 다시봐도 좋은 영화 인 것 같다 이렇게 인간미 넘치는 영화는 요새는 찾아보기 힘든 것 같다 또 배우들의 연기도
+정말 자연스럽지 않은가
+평점 왜이렇게 낮아요…??? 재밌게보기 좋은 영화인듯 합니다. 그리고 배우들 연기가 너무 재밌고 영상보는 재미도 있어요~ 그리고 오정세…이상형 됐습니다ㅋㅋㅋ
+여배우의 연기는 아쉽다.. 후시녹음도 아쉽다.. 하지만 보고있자면 좋다. 내 죽기전에 다시 리메이크 됐으면 하는 영화..
+위로받는 시간이었네요 그래서 어떤 영화보다 여운도 많이 남고 강릉에 가보고 싶어졌어요~두배우의 연기가 자연스럽게 녹아들
+어 더 좋은 시건이었네요
+영화보고나서 들어왔는데 평점보고 진짜놀렜네,,,그냥,,,와우,,개인소장감인데,,,이런영화오렌만이다, 다른뱀파이어이야기와 달라 신선했고 송강호의 연기,,심리가 ,,모든 배우들 연기 굳! 색감과 분위기도 좋다,완성도가 높다해야하나 그냥 좋다
+우선 ost 가 너무좋고 톱여배우 셋이나 나와 눈이즐겁고 오웬의 연기도 정말좋고 영화자체가 내코드와는 딱맞다 마지막엔딩은 타인의삶 이후로 최고다
+남주 평소에 좋아하는 배우라서 봤는데…너무 실망스토리가 전혀 개연성이 없고 남주는 찐득하게 연기하는데 여주가 원래 모델출신이여서 그런지 나무 장작같이 어색한 연기,그리고 도저히 납득이 안가는 스토리한 마디로 남주가 이 영화에는 아까운 배우</p>
+</li>
+<li>
+<p>키워드 “배우 연기가 좋은 영화” 에 대한 n-gram parser 검색 품질</p>
+<p>*************************** 13. row ***************************
+id: 437169
+title: NSMC review #8411543
+content: 소재도, 스토리도 정말좋았는데 연출과 배우들의 연기가 2%모자란? 하여간 이런 느낌의 영화 정말 좋은것같다. 어쿠스틱한 노래같은 영화.
+relevance_score: 10.702914</p>
+<p>*************************** 20. row ***************************
+id: 422816
+title: NSMC review #10050179
+content: 와따나베 역할한 배우 연기가 정말 별로다.감독 역량이 아직은 부족하다.좋은 시나리온데 몰입이 되지 않는다.‘퓨리’ 랑 비교해 봐라.이 영화가 8점대라는 게 말이 되니? 수용소부터는 영 별로!
+relevance_score: 10.45728
+*************************** 21. row ***************************
+id: 405097
+title: NSMC review #9218038
+content: 연출 밋밋…소재는 참 좋은데ㅜ 그리고 배우들이 전체적으로 연기가 어색함ㅠㅠ 주이디샤넬은 이 영화에 안어울리구
+relevance_score: 10.457288</p>
+<p>relevance_score: 10.457288</p>
+<p>*************************** 29. row ***************************
+id: 103320
+title: NSMC review #7459247
+content: 위로받는 시간이었네요 그래서 어떤 영화보다 여운도 많이 남고 강릉에 가보고 싶어졌어요~두배우의 연기가 자연스럽게 녹아들어 더 좋은 시건이었네요
+relevance_score: 10.457288
+*************************** 30. row ***************************
+id: 97093
+title: NSMC review #6863507
+content: 정말 최곱니다. 배우들 연기가 너무 좋아서 내가 마치 주인공이 된 거 같다고 느꼈습니다. 거기다 좋은 노래까지 들어간 최고의 영화네요
+relevance_score: 10.457288
+*************************** 31. row ***************************
+id: 75290
+title: NSMC review #3878289
+content: 아역배우의 귀여운 연기가 좋았고ㅋ 음악이 참 좋은영화!
+relevance_score: 10.457288
+31 rows in set (0.242 sec)</p>
+</li>
+</ul>
+<p>위에 있는 데이터 셋에도 보면,</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Elastic Search 검색 데이터 품질</strong></th><th>n-gram parser 검색 데이터 품질</th></tr></thead><tbody><tr><td>짧은 영화지만 몰입도 잘 되고 배우들의 연기도 좋다</td><td>소재도, 스토리도 정말좋았는데 연출과 배우들의 연기가 2%모자란? 하여간 이런 느낌의 영화 정말 좋은것같다. 어쿠스틱한 노래같은 영화.</td></tr><tr><td>배우들 연기는 좋았는데 시나리오가 영화를 망치지 않았나 싶다</td><td>와따나베 역할한 배우 연기가 정말 별로다.감독 역량이 아직은 부족하다.좋은 시나리온데 몰입이 되지 않는다.‘퓨리’ 랑 비교해 봐라.이 영화가 8점대라는 게 말이 되니? 수용소부터는 영 별로!</td></tr><tr><td>다른 영화들도 좋았지만 특히 피크닉! 아역배우 김수안의 연기는 최고!</td><td>연출 밋밋…소재는 참 좋은데ㅜ 그리고 배우들이 전체적으로 연기가 어색함ㅠㅠ 주이디샤넬은 이 영화에 안어울리구</td></tr></tbody></table></div>
+<p>위의 표와 같이 Elastic Search 의 형태소 분석 Nori는 조사와 어미를 분리하고, 어간을 추출하기에 특정 의미의 데이터 셋을 추출 할 수 있는 반면,</p>
+<p>MySQL의 n-gram parser는 “배우” “연기” “좋은” “영화” 가 포함된 검색이라면 검색 데이터에 포함을 시키기 때문에 검색 데이터 품질의 차이가 있다.</p>
+<ul>
+<li>Elastic Search 의 Precision@20
+<ol>
+<li>id=568903 score=14.003969
+영화도 좋고, 배우들 연기도 좋고~
+판정: 1</li>
+<li>id=477312 score=13.153908
+참 좋았던 영화다 배우들의 연기나 배경이나
+판정: 1</li>
+<li>id=430674 score=12.90704
+뻔하지만 배우 좋고 연기 좋고 괜찮은 영화
+판정: 1</li>
+<li>id=566329 score=12.90704
+배우들 연기 참 좋네! 우연히 만난 참 좋은 영화^^
+판정: 1</li>
+<li>id=506334 score=12.554062
+역시 영화는 배우, 연기보다 일단 시나리오가 좋아야 된다
+판정: 1</li>
+<li>id=559277 score=12.425813
+영화 괜찮다, 배우들 연기도 좋다~! 추천영화~!
+판정: 1</li>
+<li>id=466846 score=12.422389
+좋은그림감상만으로도 훌륭한영화.. 배우들의 연기도 너무 좋네요^^
+판정: 1</li>
+<li>id=442605 score=12.422389
+잔잔한 여운이 있는 좋은 영화. 배우들의 연기도 좋음.
+판정: 1</li>
+<li>id=547422 score=12.422389
+아역배우의 귀여운 연기가 좋았고ㅋ 음악이 참 좋은영화!
+판정: 1</li>
+<li>id=574477 score=12.287473
+음악도 좋고, 배우들 연기도 좋네요.특히 여자배우 느낌있어요.간만에 좋은 영화 봅니다^^
+판정: 1</li>
+<li>id=485730 score=12.006537
+시나리오가 좋다!배우연기도 볼만한 영화!
+판정: 1</li>
+<li>id=563749 score=11.99493
+좋은영화. 촬영기법이나 배우들의 연기력이 더 좋았다면 하는 그런영화.
+판정: 0</li>
+<li>id=469148 score=11.557297
+영화가 정말 좋았습니다. 무엇보다 배우들의 연기가 너무 좋아서 초반부터 울면서 보았네요.. 추천합니다!
+판정: 1</li>
+<li>id=560268 score=11.557297
+배우들 연기도 좋고, 메시지도 뚜렷한편. 다만 기분좋은 영화는 아니다.
+판정: 1</li>
+<li>id=556944 score=11.557297
+좋은 영화네요^^ 배우들연기도 좋고.. 별점 올려야지~
+판정: 1</li>
+<li>id=407774 score=11.504777
+흠..좀비영화 참 좋아하는데..그냥 지루하고 배우들 연기에 짜증이 났다..ㅋㅋ
+판정: 0</li>
+<li>id=444237 score=11.504777
+짧은 영화지만 몰입도 잘 되고 배우들의 연기도 좋다
+판정: 1</li>
+<li>id=398850 score=11.504777
+배우들 연기는 좋았는데 시나리오가 영화를 망치지 않았나 싶다
+판정: 0</li>
+<li>id=442484 score=11.504777
+다른 영화들도 좋았지만 특히 피크닉! 아역배우 김수안의 연기는 최고!
+판정: 1</li>
+<li>id=392918 score=11.504777
+배우 연기는 좋은데 내용은 완전 억지 ㅜ배우들이 아까운 영화
+판정: 0</li>
+</ol>
+</li>
+</ul>
+<p>Precision@20은 0.8로 나머지의 값들은 애매 모호한 리뷰들 이었다.</p>
+<h2 id="전체적인-nosql과-mysql-elastic-search의-차이-그래프">전체적인 NoSQL과 MySQL, Elastic Search의 차이 그래프<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#전체적인-nosql과-mysql-elastic-search의-차이-그래프" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><img src="../../과제-기능-구현-검색-엔진/image-20.png" alt="image.png"/></p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc"><button type="button" class="toc-header" aria-controls="toc-12" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#과제-기능-구현-검색-엔진" data-for="과제-기능-구현-검색-엔진">과제 기능 구현 검색 엔진</a></li><li class="depth-1"><a href="#검색어-1-공포-영화---mysql-like-검색어-결과" data-for="검색어-1-공포-영화---mysql-like-검색어-결과">검색어 1( “공포 영화” )  MySQL LIKE %검색어% 결과.</a></li><li class="depth-1"><a href="#2번-검색어-배우-연기가-좋은-영화" data-for="2번-검색어-배우-연기가-좋은-영화">2번 검색어 “배우 연기가 좋은 영화”</a></li><li class="depth-1"><a href="#3번-검색어-영화" data-for="3번-검색어-영화">3번 검색어 “영화”</a></li><li class="depth-0"><a href="#기존-like에-인덱싱-적용" data-for="기존-like에-인덱싱-적용">기존 LIKE에 인덱싱 적용</a></li><li class="depth-0"><a href="#mysql의-n-gram-parser-적용" data-for="mysql의-n-gram-parser-적용">MySQL의 n-gram parser 적용.</a></li><li class="depth-1"><a href="#검색어-1-공포-영화---mysql-n-gram-parser-결과" data-for="검색어-1-공포-영화---mysql-n-gram-parser-결과">검색어 1( “공포 영화” )  MySQL n-gram parser 결과.</a></li><li class="depth-1"><a href="#검색어-2-배우-연기가-좋은-영화---mysql-n-gram-parser-결과" data-for="검색어-2-배우-연기가-좋은-영화---mysql-n-gram-parser-결과">검색어 2( “배우 연기가 좋은 영화” )  MySQL n-gram parser 결과.</a></li><li class="depth-1"><a href="#검색어-3-영화---mysql-n-gram-parser-결과" data-for="검색어-3-영화---mysql-n-gram-parser-결과">검색어 3( “영화” )  MySQL n-gram parser 결과.</a></li><li class="depth-0"><a href="#mysql-n-gram-parser-적용-결과-표" data-for="mysql-n-gram-parser-적용-결과-표">MySQL N-gram parser 적용 결과 표</a></li><li class="depth-0"><a href="#또-다른-대안-mongodb-nosql" data-for="또-다른-대안-mongodb-nosql">또 다른 대안. MongoDB (NoSQL)</a></li><li class="depth-1"><a href="#키워드-들의-mongodb의-검색-성능-측정" data-for="키워드-들의-mongodb의-검색-성능-측정">키워드 들의 MongoDB의 검색 성능 측정</a></li><li class="depth-0"><a href="#그럼-mongdo-db도-index를-적용하면" data-for="그럼-mongdo-db도-index를-적용하면">그럼 Mongdo DB도 Index를 적용하면?</a></li><li class="depth-0"><a href="#마지막-대안--elastic-search" data-for="마지막-대안--elastic-search">마지막 대안 : Elastic search</a></li><li class="depth-1"><a href="#elastic-search-키워드-검색-결과-50만건" data-for="elastic-search-키워드-검색-결과-50만건">Elastic Search 키워드 검색 결과 (50만건)</a></li><li class="depth-0"><a href="#결론-왜-elastic-search-여야-하는지" data-for="결론-왜-elastic-search-여야-하는지">결론 (왜 Elastic Search 여야 하는지)</a></li><li class="depth-1"><a href="#mysqlrdbms-like-vs-mongodbnosql-regex" data-for="mysqlrdbms-like-vs-mongodbnosql-regex">MySQL(RDBMS) LIKE vs MongoDB(NoSQL) regex</a></li><li class="depth-1"><a href="#b-tree-인덱스-실험" data-for="b-tree-인덱스-실험">B-tree 인덱스 실험</a></li><li class="depth-1"><a href="#mysql-n-gram-vs-elasticsearch-nori" data-for="mysql-n-gram-vs-elasticsearch-nori">MySQL n-gram vs ElasticSearch Nori</a></li><li class="depth-1"><a href="#전체적인-nosql과-mysql-elastic-search의-차이-그래프" data-for="전체적인-nosql과-mysql-elastic-search의-차이-그래프">전체적인 NoSQL과 MySQL, Elastic Search의 차이 그래프</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>Backlinks</h3><ul id="list-0" class="overflow"><li><a href="../../무제.base" class="internal">무제</a></li><li><a href="../../여러-파일들-모음.base" class="internal">여러 파일들 모음</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script src="../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript-3eea7814.js" type="module" data-persist="true"></script></html>

@@ -36,7 +36,7 @@
   
 | 분류 | 기술 |  | --- | --- |  | Language | Java 26 |  | Framework | Spring Boot 4, Spring MVC, Spring Validation |  | Security | Spring Security, JWT, BCrypt |  | Persistence | Spring Data JPA, MySQL 8, H2 |  | Search | Elasticsearch 9, Nori Analyzer, Spring Data Elasticsearch |  | Storage | AWS S3 |  | Deployment | AWS EC2, AWS RDS, AWS SSM, Docker, Docker Compose, Nginx |  | CI/CD | GitHub Actions |  | Test | JUnit 5, Spring Boot Test |    
 ## 시스템 아키텍처  
-![[Pasted image 20260809165515.png]]  
+![[content/첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809165515.png]]  
 - Nginx가 정적 프론트엔드를 제공하고 `/api` 요청을 Backend로 프록시합니다.  
 - 운영 환경은 Backend, Frontend, Elasticsearch, Nginx를 Docker Compose로 함께 실행합니다.  
 - MySQL은 서비스의 원본 데이터 저장소이며, Elasticsearch는 게시글 검색 전용 인덱스를 보관합니다.  

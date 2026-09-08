@@ -4,4 +4,4 @@
 B+Tree도 B-Tree와 마찬가지로 선택 검색의 방법은 동일하다.
 
 1. "14"를 찾는 과정의 B+Tree  참고는 [[B-tree]]에서..
-![[Pasted image 20260828195455.png]]
+![[content/첨부파일 원본 모음/루트/Pasted image 20260828195455.png]]

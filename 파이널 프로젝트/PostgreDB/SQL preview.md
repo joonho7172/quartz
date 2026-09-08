@@ -24,7 +24,7 @@ CREATE TABLE "reports" (
 CREATE TABLE "search_histories" (
 	"search_history_id"	BIGINT		NOT NULL,
 	"user_id"	BIGINT		NOT NULL,
-	"keyword"	VARCHAR(100)		NULL,
+	"keyword"	VARCHAR(100)		NOT NULL,
 	"last_searched_at"	TIMESTAMPTZ		NOT NULL,
 	"created_at"	TIMESTAMPTZ		NOT NULL
 );
@@ -34,10 +34,9 @@ CREATE TABLE "group_members" (
 	"group_id"	BIGINT		NOT NULL,
 	"user_id"	BIGINT		NOT NULL,
 	"location_verified_at"	TIMESTAMPTZ		NOT NULL,
-	"left_at"	TIMESTAMPTZ		NULL,
 	"user_status"	VARCHAR(20)	DEFAULT 'ACTIVE'	NOT NULL,
 	"created_at"	TIMESTAMPTZ		NOT NULL,
-	"deleted_at"	TIMESTAMPTZ		NULL
+	"left_at"	TIMESTAMPTZ		NULL
 );
 
 CREATE TABLE "exchange_requests" (
@@ -86,7 +85,7 @@ CREATE TABLE "chat_members" (
 
 CREATE TABLE "report_action" (
 	"report_action_id"	BIGINT		NOT NULL,
-	"user_id"	BIGINT		NOT NULL,
+	"user_id"	BIGINT		NULL,
 	"report_id"	BIGINT		NOT NULL,
 	"action_type"	VARCHAR(20)		NOT NULL,
 	"action_reason"	TEXT		NOT NULL,
@@ -122,7 +121,15 @@ CREATE TABLE "groups" (
 	"group_longitude"	NUMERIC(9, 6)		NOT NULL,
 	"group_latitude"	NUMERIC(9, 6)		NOT NULL,
 	"group_content"	TEXT		NOT NULL,
-	"created_at"	TIMESTAMPTZ		NOT NULL
+	"created_at"	TIMESTAMPTZ		NOT NULL,
+	"deleted_at"	TIMESTAMPTZ		NULL
+);
+
+CREATE TABLE "chat_member_read_states" (
+	"chat_member_read_states_id"	BIGINT		NOT NULL,
+	"chat_members_id"	BIGINT		NOT NULL,
+	"message_id"	BIGINT		NULL,
+	"last_read_at"	TIMESTAMPTZ		NULL
 );
 
 CREATE TABLE "item_views" (
@@ -147,10 +154,10 @@ CREATE TABLE "refresh_tokens" (
 	"token_hash"	VARCHAR(255)		NOT NULL,
 	"expires_at"	TIMESTAMPTZ		NOT NULL,
 	"created_at"	TIMESTAMPTZ		NOT NULL,
-	"revoked_at"	TIMESTAMPTZ		NULL
+	"deleted_at"	TIMESTAMPTZ		NULL
 );
 
-CREATE TABLE "social_account" (
+CREATE TABLE "social_accounts" (
 	"social_account_id"	BIGINT		NOT NULL,
 	"user_id"	BIGINT		NOT NULL,
 	"provider"	VARCHAR(20)		NOT NULL,
@@ -197,15 +204,9 @@ CREATE TABLE "images" (
 	"image_id"	BIGINT		NOT NULL,
 	"item_id"	BIGINT		NULL,
 	"report_id"	BIGINT		NULL,
+	"inquiry_id"	BIGINT		NULL,
 	"image_url"	TEXT		NOT NULL,
 	"created_at"	TIMESTAMPTZ		NOT NULL
-);
-
-CREATE TABLE "chat_member_read_states" (
-	"chat_member_read_states_id"	BIGINT		NOT NULL,
-	"chat_members_id"	BIGINT		NOT NULL,
-	"message_id"	BIGINT		NOT NULL,
-	"last_read_at"	TIMESTAMPTZ		NOT NULL
 );
 
 ALTER TABLE "users" ADD CONSTRAINT "PK_USERS" PRIMARY KEY (
@@ -260,19 +261,23 @@ ALTER TABLE "groups" ADD CONSTRAINT "PK_GROUPS" PRIMARY KEY (
 	"group_id"
 );
 
+ALTER TABLE "chat_member_read_states" ADD CONSTRAINT "PK_CHAT_MEMBER_READ_STATES" PRIMARY KEY (
+	"chat_member_read_states_id"
+);
+
 ALTER TABLE "item_views" ADD CONSTRAINT "PK_ITEM_VIEWS" PRIMARY KEY (
 	"item_view_id"
 );
 
 ALTER TABLE "group_items" ADD CONSTRAINT "PK_GROUP_ITEMS" PRIMARY KEY (
-	"group_items_id"
+	"group_item_id"
 );
 
 ALTER TABLE "refresh_tokens" ADD CONSTRAINT "PK_REFRESH_TOKENS" PRIMARY KEY (
 	"refresh_token_id"
 );
 
-ALTER TABLE "social_account" ADD CONSTRAINT "PK_SOCIAL_ACCOUNT" PRIMARY KEY (
+ALTER TABLE "social_accounts" ADD CONSTRAINT "PK_SOCIAL_ACCOUNTS" PRIMARY KEY (
 	"social_account_id"
 );
 
@@ -290,10 +295,6 @@ ALTER TABLE "chat_messages" ADD CONSTRAINT "PK_CHAT_MESSAGES" PRIMARY KEY (
 
 ALTER TABLE "images" ADD CONSTRAINT "PK_IMAGES" PRIMARY KEY (
 	"image_id"
-);
-
-ALTER TABLE "chat_member_read_states" ADD CONSTRAINT "PK_CHAT_MEMBER_READ_STATES" PRIMARY KEY (
-	"chat_member_read_states_id"
 );
 
 ALTER TABLE "reports" ADD CONSTRAINT "FK_users_TO_reports_1" FOREIGN KEY (
@@ -443,6 +444,20 @@ REFERENCES "users" (
 	"user_id"
 );
 
+ALTER TABLE "chat_member_read_states" ADD CONSTRAINT "FK_chat_members_TO_chat_member_read_states_1" FOREIGN KEY (
+	"chat_members_id"
+)
+REFERENCES "chat_members" (
+	"chat_members_id"
+);
+
+ALTER TABLE "chat_member_read_states" ADD CONSTRAINT "FK_chat_messages_TO_chat_member_read_states_1" FOREIGN KEY (
+	"message_id"
+)
+REFERENCES "chat_messages" (
+	"message_id"
+);
+
 ALTER TABLE "item_views" ADD CONSTRAINT "FK_items_TO_item_views_1" FOREIGN KEY (
 	"item_id"
 )
@@ -478,7 +493,7 @@ REFERENCES "users" (
 	"user_id"
 );
 
-ALTER TABLE "social_account" ADD CONSTRAINT "FK_users_TO_social_account_1" FOREIGN KEY (
+ALTER TABLE "social_accounts" ADD CONSTRAINT "FK_users_TO_social_accounts_1" FOREIGN KEY (
 	"user_id"
 )
 REFERENCES "users" (
@@ -527,17 +542,10 @@ REFERENCES "reports" (
 	"report_id"
 );
 
-ALTER TABLE "chat_member_read_states" ADD CONSTRAINT "FK_chat_members_TO_chat_member_read_states_1" FOREIGN KEY (
-	"chat_members_id"
+ALTER TABLE "images" ADD CONSTRAINT "FK_inquiries_TO_images_1" FOREIGN KEY (
+	"inquiry_id"
 )
-REFERENCES "chat_members" (
-	"chat_members_id"
-);
-
-ALTER TABLE "chat_member_read_states" ADD CONSTRAINT "FK_chat_messages_TO_chat_member_read_states_1" FOREIGN KEY (
-	"message_id"
-)
-REFERENCES "chat_messages" (
-	"message_id"
+REFERENCES "inquiries" (
+	"inquiry_id"
 );
 
