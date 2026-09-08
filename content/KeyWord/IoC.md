@@ -1,0 +1,1 @@
+Inversion of control 의 약자로 객체의 생성과 라이프 사이클 관리를 개발자가 아닌, [[Spring Container]]가 관리 하는 것.
