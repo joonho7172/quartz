@@ -60,3 +60,6 @@ DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}   ← 삭제 (issue_nu
 참고
 https://kanado2000.tistory.com/132
 https://learn.microsoft.com/ko-kr/azure/architecture/best-practices/api-design
+
+
+#API 

@@ -356,3 +356,7 @@ UNIQUE(report_id)
 	1. 문의 상태
 7. answer
 	1. 문의 답변 내용
+
+
+
+#ERD

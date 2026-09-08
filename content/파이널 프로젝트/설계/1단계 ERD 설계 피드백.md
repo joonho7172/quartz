@@ -44,3 +44,6 @@
 	   
 	   공부
 13. text쓰면 검색 속도 느려지는지 알아보기ㅣ, varchar , float 
+
+
+#ERD 
