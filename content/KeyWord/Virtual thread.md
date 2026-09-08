@@ -9,3 +9,8 @@ JDK21 이전에도 virtual thread가 없었던 것은 아니나, 그 전에는 �
 ![[Pasted image 20260908151231.png]]기존에는 [[kernel]] level에 있는 [[Thread]] 를 user level의 [[Thread]] 로 1대1 매핑 시키는데, virtual thread는 [[Thread]] 위에서 여러개의 virtual thread가 번갈아 가면서 실행된다.
 
 가장 큰 특징은 virtual thread는 컨텍스트 스위칭 비용이 thread에 비해 매우 저렴하다는 점.
+
+virtual thread는 carrierThread를 가지고 있음. 실제로 작업하는 platform thread를 의미.
+virtual thread는 [[ForkJoinPool]] 이라는 스케줄러에서 담당함.
+
+![[Pasted image 20260908154251.png]]
