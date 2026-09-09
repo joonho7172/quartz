@@ -1,4 +1,4 @@
-![[content/첨부파일 원본 모음/Pasted image 20260806164059.png]]ES의 전체적인 아키텍쳐,
+![[첨부파일 원본 모음/Pasted image 20260806164059.png]]ES의 전체적인 아키텍쳐,
 content Source에서 ES는 검색에 사용 되기 위해 별도의 재시작이나 상태의 갱신이 필요하지 않는다.
 그저 데이터의 색인 작업이 완료되면 바로 동시에 검색 할 수 있다는 것..
 
@@ -19,7 +19,6 @@ Elastic Search는 [[Multi Tenancy]] 를 지원하기에, 여러 인덱스를 한
 
 ### PostSearchService 의 after commit 이후
 Spring Event Listener의 phase를 RDS의 색인 commit 이후로 했기 때문에, ES의 역색인 작업의 실패가 
-
 
 
 

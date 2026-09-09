@@ -287,17 +287,17 @@ N --> B[Spring Boot Backend]
 
 | 홈 | 로그인 | 회원가입 |
 
-![[content/첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809194734.png]]
-![[content/첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809194745.png]]
-![[content/첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809194804.png]]
+![[첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809194734.png]]
+![[첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809194745.png]]
+![[첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809194804.png]]
 #### 영화 정보
 
   
 | 영화 목록·검색 | 영화 상세 모달 |
 
-![[content/첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809194929.png]]
-![[content/첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809200501.png]]
-![[content/첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809195219.png]]
+![[첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809194929.png]]
+![[첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809200501.png]]
+![[첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809195219.png]]
 
 #### 영화 리뷰
 
@@ -305,10 +305,10 @@ N --> B[Spring Boot Backend]
 
 | 리뷰 목록·검색 | 게시글 작성 | 게시글 상세 |
 
-![[content/첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809200645.png]]
-![[content/첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809200708.png]]
-![[content/첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809201328.png]]
-  ![[content/첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809201426.png]]
+![[첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809200645.png]]
+![[첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809200708.png]]
+![[첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809201328.png]]
+  ![[첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809201426.png]]
 
 #### 댓글 · 회원 정보
 
@@ -316,9 +316,9 @@ N --> B[Spring Boot Backend]
 
 | 댓글 작성·수정 | 회원 정보 수정 | 비밀번호 수정 |
 
-![[content/첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809201923.png]]
-![[content/첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809202048.png]]
-  ![[content/첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809202107.png]]
+![[첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809201923.png]]
+![[첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809202048.png]]
+  ![[첨부파일 원본 모음/martin_movie이미지/Pasted image 20260809202107.png]]
 
 ## 프론트엔드 설계
 

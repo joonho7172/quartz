@@ -11,6 +11,6 @@ JVM은 총 3개의 부분으로 구성이 되어 있으며,
 4. JNI
 5. Native method library로 구성이 되어 있다. 
    
-   ![[content/첨부파일 원본 모음/루트/Pasted image 20260907164529.png]]
+   ![[첨부파일 원본 모음/루트/Pasted image 20260907164529.png]]
 
 #java, #JVM
