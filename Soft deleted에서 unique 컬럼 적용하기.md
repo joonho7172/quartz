@@ -1,10 +1,7 @@
 https://velog.io/@elive7/soft-delete%EC%97%90%EC%84%9C-unique-%EC%A1%B0%EA%B1%B4-%EB%98%91%EB%98%91%ED%95%98%EA%B2%8C-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0
 
-
 문제 상황 
 
-
-안녕하세요 케빈! 학습 방향에 관련한 질문입니다!
 이번 주말에 softDelete 관련해서 unique 칼럼 적용에 대해서 문제가 있었는데,
 기존에는 PostgreSQL로 기술 선정을 했어서, delatedAt과 name(uk) 를 partial index 적용을 해 해결을 하려고 설계에서 잡았었는데, 기술 선정이 Mysql로 바뀌면서 부분 인덱스 적용을 못하게 되었습니다.(null값이 중복 되기 때문)
 
