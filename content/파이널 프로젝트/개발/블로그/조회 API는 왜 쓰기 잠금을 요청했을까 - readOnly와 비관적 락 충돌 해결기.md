@@ -82,10 +82,6 @@ FOR UPDATE;
 
 예를 들어 Spring과 Hibernate의 연동에서는 읽기 전용 트랜잭션에 맞춰 flush 모드를 `MANUAL`로 조정하는 최적화가 적용됩니다. 따라서 원래 코드의 `readOnly`는 조회 의도를 표현하고 불필요한 변경 감지 비용을 줄이는 데 의미가 있습니다. 구체적인 엔티티 읽기 전용 처리와 적용 범위는 구현 및 버전에 따라 확인해야 합니다. 
 
-여기서 flush 최적화와 엔티티 스냅샷 제거를 구분해야 합니다. `MANUAL`은 Hibernate가 자동으로 flush하는 시점을 제한하는 설정입니다. 반면 Hibernate에서 개별 엔티티를 읽기 전용으로 취급하면 그 엔티티는 dirty checking 대상에서 빠지고 상태 스냅샷도 유지하지 않습니다. 이는 Hibernate의 `Session.setDefaultReadOnly(true)`나 조회별 read-only 설정과 관련된 동작입니다. 따라서 `@Transactional(readOnly = true)`만으로 모든 환경에서 엔티티 스냅샷이 생략된다고 단정할 수 없습니다. [Hibernate Session 문서](https://docs.hibernate.org/orm/6.6/javadocs/org/hibernate/Session.html)
-
-그러므로 이에 대응하는 MySQL 서버 버전은 따로 없습니다. 참고로 Spring Framework는 5.1부터 특정 트랜잭션 로컬 `EntityManager` 경로에서 Hibernate `Session`의 기본 엔티티 상태를 read-only로 설정하는 최적화도 포함하지만, 적용 여부는 실제 트랜잭션 경로에 달려 있습니다. [Spring Framework 5.3 구현](https://github.com/spring-projects/spring-framework/blob/v5.3.39/spring-orm/src/main/java/org/springframework/orm/jpa/vendor/HibernateJpaDialect.java)
-
 JDBC 계층에서도 읽기 전용 설정을 서버로 전달할 수 있습니다. MySQL Connector/J는 `readOnlyPropagatesToServer` 옵션을 제공하며, 지원되는 서버에서 `Connection.setReadOnly()`의 설정을 서버의 트랜잭션 접근 모드로 전달할지 제어합니다.
 
 이번 로그는 읽기 전용 트랜잭션 제약에 의해 잠금 조회가 거부되었음을 보여줍니다. 다만 로그만으로 드라이버 옵션이나 트랜잭션 관리자의 전체 설정까지 확인할 수는 없으므로, 전달 경로를 세부적으로 확정하려면 실행 환경의 설정도 함께 살펴봐야 합니다.
