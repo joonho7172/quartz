@@ -1,5 +1,7 @@
 중요한 점은 현재 키가 `images/{userId}/{uuid}` 형태라서 `images/` 전체에 Lifecycle 삭제 규칙을 걸면 정상 등록된 이미지까지 삭제될 수 있다는 것입니다. `images/pending/`와 `images/permanent/`처럼 prefix를 분리하거나 `pending` 태그를 사용해야 합니다. S3 Lifecycle은 prefix·tag 기준으로 객체를 필터링할 수 있습니다. ([AWS Lifecycle](https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html))
 
+
+
 ![[Pasted image 20260923125930.png]]
 
 ## 기본안에서 백엔드가 맡을 일
@@ -14,4 +16,4 @@
 ![[Pasted image 20260923151556.png]]
 
 
-presigned 지금은 PUT이라 post 는 나중에 파일 크기  자체적으로 검증할때..
+presignded
