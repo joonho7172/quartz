@@ -117,7 +117,6 @@ public ItemPageResponse findByGroup(Long userId, Long groupId, String cursor) {
 '
 
 
-[REDACTED]
 
 
 
