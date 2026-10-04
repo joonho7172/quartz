@@ -114,8 +114,6 @@ public ItemPageResponse findByGroup(Long userId, Long groupId, String cursor) {
 
 조건문을 통해 findByIdAndDeletedAtIsNull을 냅두고 해결하기로 했다. 
 
-'
-
 
 
 
