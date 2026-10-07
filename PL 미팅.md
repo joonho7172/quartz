@@ -1,0 +1,58 @@
+실제로 캐싱으로 전체적인 트래픽에서 차지하는 비중을 조금 줄여야 한다.
+실제 서비스를 조회하는 입장에서  가설을 세우고 하는거로
+
+패치 조인과 엔티티 그래프 등등 비교 다시 한번 살펴보기
+
+nosql (클라우드랑 얘기해서 볼륨 나눠서 마이그레이션), (문제 상황 규정하고, 어떻게 근거만들어갈지 로컬에서 테스트를 하던지 충분히 비교하고 해보자..) 문서화를 통해서,..
+
+유동적으로 일정 맞추면서 고도화 할 것.. 문제 상황에 대해서 생각을 해볼 것.
+
+다음 PL 미팅때 고도화 된 사항 계속 할 것.
+
+다른 서비스의 고도화 방향에서 좀 공감을 얻고 생각 할 것..
+그리고 좀 더 구체적으로.
+
+
+
+Long itemId,  
+String title,  
+String contentPreview,  
+Integer quantity,  
+Owner owner,  
+ItemState itemState,  
+String thumbnailImageUrl,  
+Long likeCount,  
+Long exchangeRequestCount,  
+Boolean isLiked,  
+LocalDateTime createdAt
+
+
+Long itemId,  
+List<GroupInfo> groups,  
+String title,  
+String contentPreview,  
+Integer quantity,  
+ItemState itemState,  
+String thumbnailImageUrl,  
+Long likeCount,  
+Long exchangeRequestCount,  
+Boolean isLiked,  
+LocalDateTime createdAt
+	
+
+
+### v2 개발 목록
+
+- **마이페이지**
+    - 내 계정 정보 조회
+    - 로그아웃
+    - 내가 등록한 상품 목록
+    - 교환한 물품 목록
+    - 그룹 관리 목록 → 삭제 (사유 : 필요없음 그룹 목록에서 관리 가능)
+    - 관심있는 물건 목록
+    - 회원 탈퇴
+- 채팅 : 시스템 메세지 등 형식 구체화
+- **관심 기능 ( 좋아요 )**
+- **조회 수 기능**
+- AI 챗봇 기능
+- **AI 스마트 검색**
