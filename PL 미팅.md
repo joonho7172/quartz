@@ -13,43 +13,15 @@ nosql (클라우드랑 얘기해서 볼륨 나눠서 마이그레이션), (문�
 그리고 좀 더 구체적으로.
 
 
-
-Long itemId,  
-String title,  
-String contentPreview,  
-Integer quantity,  
-Owner owner,  
-ItemState itemState,  
-String thumbnailImageUrl,  
-Long likeCount,  
-Long exchangeRequestCount,  
-Boolean isLiked,  
-LocalDateTime createdAt
-
-
-Long itemId,  
-List<GroupInfo> groups,  
-String title,  
-String contentPreview,  
-Integer quantity,  
-ItemState itemState,  
-String thumbnailImageUrl,  
-Long likeCount,  
-Long exchangeRequestCount,  
-Boolean isLiked,  
-LocalDateTime createdAt
-	
-
-
 ### v2 개발 목록
 
 - **마이페이지**
     - 내 계정 정보 조회
     - 로그아웃
-    - 내가 등록한 상품 목록
-    - 교환한 물품 목록
-    - 그룹 관리 목록 → 삭제 (사유 : 필요없음 그룹 목록에서 관리 가능)
-    - 관심있는 물건 목록
+    - 내가 등록한 상품 목록 x 
+    - 교환한 물품 목록 x 
+    - 그룹 관리 목록 → 삭제 (사유 : 필요없음 그룹 목록에서 관리 가능) x 
+    - 관심있는 물건 목록 x
     - 회원 탈퇴
 - 채팅 : 시스템 메세지 등 형식 구체화
 - **관심 기능 ( 좋아요 )**
