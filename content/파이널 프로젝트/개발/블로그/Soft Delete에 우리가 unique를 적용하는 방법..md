@@ -75,7 +75,7 @@ NULL 값 또한, 같이 UNIQUE 적용이 되는걸 볼 수 있습니다.
 Nullable 보조 컬럼을 unqiue로 매핑하는 것은 다음과 같다.
 
 기본의 group_name을 두고, deleted_at이 null인 경우에는 active_group_name을 group_name과 같게,
-deleted_at이 등록되면, NULL로 변환 시키는것으로, 실질적으로 확인하는 것은 active_group_name이다.
+deleted_at이 등록되면, NULL로 변환 시키는것으로, 실질적으로 확인하는 것은 active_group_name이다...
 
 |group_name|deleted_at|active_group_name|
 |---|---|---|
