@@ -226,3 +226,6 @@ Spring Kafka는 별도 명시가 없다면 컨테이너가 자동 커밋을 끄�
 118. `spring.kafka.bootstrap-servers`의 값이 아니라 `KAFKA_BOOTSTRAP_SERVERS` 설정 유무로 구현을 선택한 이유는 무엇인가요?
 119. 이벤트 record에 필드를 추가하거나 타입을 바꿀 때, 이전 producer와 새 consumer가 공존하는 배포를 어떻게 보장하나요?
 120. ★ **지금 Kafka 설계를 한 가지만 개선할 수 있다면 무엇을 먼저 바꾸겠나요? 실제 장애 가능성과 비용을 근거로 설명해 주세요.**
+
+
+...
