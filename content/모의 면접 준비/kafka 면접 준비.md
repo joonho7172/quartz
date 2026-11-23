@@ -111,7 +111,7 @@
 50. Kafka 보관 기간을 넘어서 consumer가 중단되어 있었다면, 어떤 데이터를 복구할 수 있고 어떤 데이터는 잃나요?
 
 
-Spring Kafka는 별도 명시가 없다면 컨테이너가 자동 커밋을 끄고 기본 `BATCH` 모드로 커밋합니다. 또한 `auto.offset.reset`은 유효한 기존 offset이 없을 때 적용됩니다. 실제 배포 환경의 최종 설정은 별도로 확인해야 합니다. [Spring 커밋 동작](https://docs.spring.io/spring-kafka/reference/kafka/receiving-messages/message-listener-container.html), [Kafka offset 설정](https://kafka.apache.org/41/configuration/consumer-configs/)
+Spring Kafka는 별도 명시가 없다면 컨테이너가 자동 커밋을 끄고 기본 `BATCH` 모드로 커밋합니다. 또한 `auto.offset.reset`은 유효한 기존 offset이 없을 때 적용됩니다.
 
 ---
 
