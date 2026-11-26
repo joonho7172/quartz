@@ -4,9 +4,7 @@
     "experimentalDecorators": true,
     "module": "esnext",
     "target": "esnext",
-    "moduleResolution": "node",
-    // shortcut: keep legacy resolution on TS 6, migrate imports before upgrading to TS 7
-    "ignoreDeprecations": "6.0",
+    "moduleResolution": "bundler",
     "strict": true,
     "incremental": true,
     "resolveJsonModule": true,
